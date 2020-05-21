@@ -1,0 +1,4 @@
+command /party [<player>]:
+    trigger:
+        if arg-1 is set:
+            add %arg-1% to {party::%uuid of player%}

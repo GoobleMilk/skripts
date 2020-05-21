@@ -1,0 +1,21 @@
+options:
+    queue join: "&aQueued!"
+    queue leave: "&cLeft Queue!"
+
+
+command /queue:
+    trigger:
+        if {queue::*} does not contain player:
+            add player to {queue::*}
+            send {@queued message} to player
+        else:
+            remove player from {queue::*}
+            send {@queue leave} to player
+            
+command /list:
+    trigger:
+        send "Queue: {queue::*}" to player
+
+command /menu:
+    trigger:
+        open chest with 3

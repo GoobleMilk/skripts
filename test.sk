@@ -1,0 +1,16 @@
+variables:
+    {moneypersecondprice::%uuid of player%} = 25
+    {fernbreak::%uuid of player%} = 1
+    {money::%uuid of player%} = 0
+    {moneypersecond::%uuid of player%} = 0
+on join:
+    broadcast "Hi %player%"
+
+on break of block:
+    if event-block is fern:
+        cancel-event
+        add {fernbreak::%uuid of player%} to {money::%uuid of player%}
+
+every 1 second:
+    add {moneypersecond::%uuid of player%} to money::%uuid of player%}
+

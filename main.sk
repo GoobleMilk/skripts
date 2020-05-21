@@ -1,0 +1,22 @@
+# Main skript really
+
+on join:
+    if {joins::*} does not contain player:
+        add 1 to {joins::*}
+        add player to {players::*}
+        broadcast "&cPlayer"
+
+command /everybody:
+	trigger:
+		message "%{players::*}% &7Long or not everyone is important."
+
+
+
+# ashley is simp
+# Disregard everything I say in comments.
+
+command /staffmode:
+    trigger:
+        set {_player} to %player%
+        make player execute command "/ci"
+        give {_player} 1 golden axe named "&cBan Hammer"
