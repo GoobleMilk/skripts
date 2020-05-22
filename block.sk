@@ -1,0 +1,11 @@
+command /block [<player>]:
+    trigger:
+        if arg-1 is set:
+            add %arg-1% to {blocked::%player%}
+        else:
+            message: "Please list a person, /block &c<---------- Missing"
+
+on chat:
+    loop all players:
+        if {blocked::%loop-player%} contains %player%:
+             remove loop-player from chat recipients
